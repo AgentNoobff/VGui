@@ -1,6 +1,6 @@
 # API Reference
 
-This page is a map of every public VGui API type. The [generated Javadocs](https://agentnoobff.github.io/VGUI/) contain complete signatures and linked source-level documentation.
+This page is a map of every public VGui API type. The [generated Javadocs](https://agentnoobff.github.io/VGui/) contain complete signatures and linked source-level documentation.
 
 ## `me.agent.vgui.api`
 

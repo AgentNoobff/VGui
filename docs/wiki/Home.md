@@ -42,7 +42,7 @@ The backend still owns the real player inventory. A default VGui view is a displ
 - `ItemBuilder` writes modern item components and legacy NBT.
 - `ClickContext` describes one click and exposes navigation and sound actions.
 
-The generated [API Javadocs](https://agentnoobff.github.io/VGUI/) provide signature-level documentation. This Wiki focuses on how the pieces work together.
+The generated [API Javadocs](https://agentnoobff.github.io/VGui/) provide signature-level documentation. This Wiki focuses on how the pieces work together.
 
 ## Deployment choices
 
@@ -56,12 +56,12 @@ The current source builds with Java 25 and Velocity 4.0.0. PacketEvents, Velocit
 
 ## Project links
 
-- [Repository](https://github.com/AgentNoobff/VGUI)
-- [Latest release](https://github.com/AgentNoobff/VGUI/releases/latest)
-- [API Javadocs](https://agentnoobff.github.io/VGUI/)
-- [Issues](https://github.com/AgentNoobff/VGUI/issues)
-- [Discussions](https://github.com/AgentNoobff/VGUI/discussions)
-- [Security reports](https://github.com/AgentNoobff/VGUI/security/advisories/new)
+- [Repository](https://github.com/AgentNoobff/VGui)
+- [Latest release](https://github.com/AgentNoobff/VGui/releases/latest)
+- [API Javadocs](https://agentnoobff.github.io/VGui/)
+- [Issues](https://github.com/AgentNoobff/VGui/issues)
+- [Discussions](https://github.com/AgentNoobff/VGui/discussions)
+- [Security reports](https://github.com/AgentNoobff/VGui/security/advisories/new)
 
 <details>
 <summary aria-label="Documentation note">&#8203;</summary>

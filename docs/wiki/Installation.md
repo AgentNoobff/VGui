@@ -4,7 +4,7 @@ VGui supports a standalone plugin model and a shaded-library model. The standalo
 
 ## Runtime installation
 
-Download [vgui.jar from the latest release](https://github.com/AgentNoobff/VGUI/releases/latest/download/vgui.jar) and place it in `plugins/` on the Velocity proxy.
+Download [vgui.jar from the latest release](https://github.com/AgentNoobff/VGui/releases/latest/download/vgui.jar) and place it in `plugins/` on the Velocity proxy.
 
 This jar is self-contained for VGui's PacketEvents usage: it embeds PacketEvents' API,
 Velocity adapter, and common runtime modules while relying on Velocity for Netty. A
@@ -38,7 +38,7 @@ The files do not contain a version in their asset name. The plugin descriptor an
 </dependencies>
 ```
 
-For a release build, replace `main-SNAPSHOT` with the tag shown by the [latest release](https://github.com/AgentNoobff/VGUI/releases/latest), using `vX.Y.Z` syntax.
+For a release build, replace `main-SNAPSHOT` with the tag shown by the [latest release](https://github.com/AgentNoobff/VGui/releases/latest), using `vX.Y.Z` syntax.
 
 `provided` is correct when `vgui.jar` supplies the API at runtime. It prevents Maven from embedding VGui into your plugin jar.
 
@@ -123,4 +123,4 @@ The main jar is written to `target/`. Local installation into the Maven cache is
 
 ## Javadocs and domains
 
-A separate domain is not required. GitHub Pages hosts the generated API documentation at [agentnoobff.github.io/VGUI](https://agentnoobff.github.io/VGUI/). Pages is configured for this repository with HTTPS, and the workflow publishes from `main`.
+A separate domain is not required. GitHub Pages hosts the generated API documentation at [agentnoobff.github.io/VGui](https://agentnoobff.github.io/VGui/). Pages is configured for this repository with HTTPS, and the workflow publishes from `main`.

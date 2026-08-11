@@ -43,7 +43,7 @@ We agree to restrict the following behaviors in our community. Instances, threat
 
 Tensions can occur between community members even when they are trying their best to collaborate. Not every conflict represents a Code of Conduct violation, and this Code of Conduct reinforces encouraged behaviors and norms that can help avoid conflicts and minimize harm.
 
-To report a possible violation, open a [Code of Conduct contact request](https://github.com/AgentNoobff/VGUI/issues/new?template=conduct_contact.md). Do not include incident details, names, screenshots, logs, or other sensitive information in the public issue. A maintainer will use the contact method you provide to arrange a private reporting channel.
+To report a possible violation, open a [Code of Conduct contact request](https://github.com/AgentNoobff/VGui/issues/new?template=conduct_contact.md). Do not include incident details, names, screenshots, logs, or other sensitive information in the public issue. A maintainer will use the contact method you provide to arrange a private reporting channel.
 
 Project maintainers take reports of violations seriously and will make every reasonable effort to respond promptly. They will investigate reports, keep investigation and enforcement actions as confidential as possible, and prioritize the safety of the people involved.
 

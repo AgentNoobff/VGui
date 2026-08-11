@@ -6,8 +6,8 @@ VGui uses Git tags and GitHub Releases. Release tags use `vX.Y.Z` form.
 
 Documentation links to the stable latest endpoint:
 
-- latest release page: `https://github.com/AgentNoobff/VGUI/releases/latest`
-- latest runtime jar: `https://github.com/AgentNoobff/VGUI/releases/latest/download/vgui.jar`
+- latest release page: `https://github.com/AgentNoobff/VGui/releases/latest`
+- latest runtime jar: `https://github.com/AgentNoobff/VGui/releases/latest/download/vgui.jar`
 
 No release number is embedded in those URLs.
 
