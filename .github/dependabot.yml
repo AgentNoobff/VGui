@@ -1,0 +1,30 @@
+version: 2
+updates:
+  - package-ecosystem: maven
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '04:00'
+      timezone: Asia/Kolkata
+    open-pull-requests-limit: 10
+    groups:
+      maven-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # Netty 5 is still an alpha line; stay on the newest stable Netty 4 release.
+      - dependency-name: io.netty:netty-buffer
+        versions: ['[5,)']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '04:30'
+      timezone: Asia/Kolkata
+    groups:
+      github-actions:
+        patterns: ['*']

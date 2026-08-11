@@ -1,0 +1,9 @@
+{
+  "id": "vgui",
+  "name": "VGui",
+  "version": "${project.version}",
+  "description": "Proxy-side virtual inventory GUIs for Velocity",
+  "authors": ["AgentNoobff"],
+  "dependencies": [],
+  "main": "me.agent.vgui.core.VGuiPlatform"
+}

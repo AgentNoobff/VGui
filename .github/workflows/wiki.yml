@@ -1,0 +1,54 @@
+name: Wiki
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/wiki/**'
+      - 'scripts/Publish-Wiki.ps1'
+      - '.github/workflows/wiki.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: wiki
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Publish GitHub Wiki
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Clone the Wiki
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          git clone
+          "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git"
+          "${RUNNER_TEMP}/wiki"
+
+      - name: Synchronize canonical pages
+        shell: pwsh
+        run: ./scripts/Publish-Wiki.ps1 -WikiDirectory "${{ runner.temp }}/wiki"
+
+      - name: Publish changes
+        working-directory: ${{ runner.temp }}/wiki
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add --all
+          if git diff --cached --quiet; then
+            echo "Wiki is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Synchronize documentation from main"
+          git push

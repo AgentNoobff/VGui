@@ -1,0 +1,1 @@
+[Repository](https://github.com/AgentNoobff/VGUI) | [Latest release](https://github.com/AgentNoobff/VGUI/releases/latest) | [Javadocs](https://agentnoobff.github.io/VGUI/) | [MIT License](https://github.com/AgentNoobff/VGUI/blob/main/LICENSE)

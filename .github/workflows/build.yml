@@ -1,0 +1,85 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Java 25 verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Java 25
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+
+      - name: Verify with Maven Wrapper
+        run: |
+          chmod +x ./mvnw
+          ./mvnw --batch-mode --no-transfer-progress --strict-checksums clean verify
+
+      - name: Check release contents
+        shell: bash
+        run: |
+          set -euo pipefail
+          main_jar="$(find target -maxdepth 1 -type f -name 'vgui-*.jar' ! -name '*-sources.jar' ! -name '*-javadoc.jar' -print -quit)"
+          test -n "$main_jar"
+          entries="$(jar tf "$main_jar")"
+          test "$(grep -cx 'velocity-plugin.json' <<< "$entries")" -eq 1
+          grep -qx 'me/agent/vgui/api/VGui.class' <<< "$entries"
+          grep -qx 'com/github/retrooper/packetevents/PacketEvents.class' <<< "$entries"
+          grep -qx 'io/github/retrooper/packetevents/velocity/factory/VelocityPacketEventsBuilder.class' <<< "$entries"
+          if grep -q '^io/netty/' <<< "$entries"; then
+            echo "standalone jar must use Velocity's Netty instead of embedding another copy" >&2
+            exit 1
+          fi
+          test -s target/reports/apidocs/index.html
+          descriptor="$(unzip -p "$main_jar" velocity-plugin.json)"
+          grep -q '"version"' <<< "$descriptor"
+          if grep -q '\${' <<< "$descriptor"; then
+            echo "velocity-plugin.json contains an unresolved Maven property" >&2
+            exit 1
+          fi
+
+      - name: Upload build outputs
+        uses: actions/upload-artifact@v7
+        with:
+          name: vgui-${{ github.sha }}
+          path: target/vgui-*.jar
+          if-no-files-found: error
+          retention-days: 14
+
+  dependency-review:
+    name: Dependency review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Review dependency changes
+        uses: actions/dependency-review-action@v5.0.0
+        with:
+          fail-on-severity: moderate

@@ -1,0 +1,65 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Java 25
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+
+      - name: Validate tag
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${GITHUB_REF_NAME#v}"
+          if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z.-]+)?$ ]]; then
+            echo "Tag must use a version such as v2.1.0" >&2
+            exit 1
+          fi
+          echo "value=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Build release artifacts
+        run: |
+          chmod +x ./mvnw
+          ./mvnw --batch-mode --no-transfer-progress --strict-checksums -Drevision=${{ steps.version.outputs.value }} clean verify
+
+      - name: Prepare stable asset names
+        shell: bash
+        run: |
+          set -euo pipefail
+          version='${{ steps.version.outputs.value }}'
+          mkdir release
+          cp "target/vgui-${version}.jar" release/vgui.jar
+          cp "target/vgui-${version}-sources.jar" release/vgui-sources.jar
+          cp "target/vgui-${version}-javadoc.jar" release/vgui-javadoc.jar
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "${GITHUB_REF_NAME}"
+          release/vgui.jar
+          release/vgui-sources.jar
+          release/vgui-javadoc.jar
+          --verify-tag
+          --generate-notes
+          --title "VGui ${{ steps.version.outputs.value }}"

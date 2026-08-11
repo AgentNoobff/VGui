@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://github.com/AgentNoobff/VGUI/wiki
+    about: Read the complete guides and API documentation first.
+  - name: Usage questions
+    url: https://github.com/AgentNoobff/VGUI/discussions
+    about: Ask for help with integrations and API design.
+  - name: Security report
+    url: https://github.com/AgentNoobff/VGUI/security/advisories/new
+    about: Report vulnerabilities privately.
