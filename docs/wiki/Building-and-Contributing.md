@@ -11,7 +11,7 @@ No system Maven installation is required.
 ## Clone and verify
 
 ```bash
-git clone https://github.com/AgentNoobff/VGUI.git
+git clone https://github.com/AgentNoobff/VGui.git
 cd VGUI
 ./mvnw clean verify
 ```
@@ -19,7 +19,7 @@ cd VGUI
 Windows:
 
 ```powershell
-git clone https://github.com/AgentNoobff/VGUI.git
+git clone https://github.com/AgentNoobff/VGui.git
 Set-Location VGUI
 .\mvnw.cmd clean verify
 ```

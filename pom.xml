@@ -11,7 +11,7 @@
 
     <name>vgui</name>
     <description>Proxy-side virtual inventory GUI library for Velocity, powered by PacketEvents.</description>
-    <url>https://github.com/AgentNoobff/VGUI</url>
+    <url>https://github.com/AgentNoobff/VGui</url>
 
     <licenses>
         <license>
@@ -29,9 +29,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/AgentNoobff/VGUI.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/AgentNoobff/VGUI.git</developerConnection>
-        <url>https://github.com/AgentNoobff/VGUI</url>
+        <connection>scm:git:https://github.com/AgentNoobff/VGui.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/AgentNoobff/VGui.git</developerConnection>
+        <url>https://github.com/AgentNoobff/VGui</url>
         <tag>HEAD</tag>
     </scm>
 

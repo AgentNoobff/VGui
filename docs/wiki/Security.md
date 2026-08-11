@@ -2,7 +2,7 @@
 
 ## Report privately
 
-Use [GitHub private vulnerability reporting](https://github.com/AgentNoobff/VGUI/security/advisories/new). Do not open a public issue for a vulnerability.
+Use [GitHub private vulnerability reporting](https://github.com/AgentNoobff/VGui/security/advisories/new). Do not open a public issue for a vulnerability.
 
 Include:
 

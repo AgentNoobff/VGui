@@ -58,7 +58,7 @@ The data directory is passed to PacketEvents when VGui creates the API. VGui its
 
 ## Updating
 
-1. Download [the latest stable vgui.jar](https://github.com/AgentNoobff/VGUI/releases/latest/download/vgui.jar).
+1. Download [the latest stable vgui.jar](https://github.com/AgentNoobff/VGui/releases/latest/download/vgui.jar).
 2. Stop the proxy.
 3. Replace the old jar.
 4. Start the proxy and inspect startup logs.

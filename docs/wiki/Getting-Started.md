@@ -15,7 +15,7 @@ lifecycle. Do not add a separate PacketEvents plugin solely for VGui.
 
 ## 1. Install VGui
 
-Download the [latest stable jar](https://github.com/AgentNoobff/VGUI/releases/latest/download/vgui.jar), place it in the Velocity `plugins` directory, and restart the proxy.
+Download the [latest stable jar](https://github.com/AgentNoobff/VGui/releases/latest/download/vgui.jar), place it in the Velocity `plugins` directory, and restart the proxy.
 
 The stable asset is always named `vgui.jar`. The URL follows the latest GitHub release and does not contain a release number.
 

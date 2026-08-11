@@ -2,11 +2,11 @@
 
 Proxy-side inventory screens for [Velocity](https://papermc.io/software/velocity), powered by [PacketEvents](https://github.com/retrooper/packetevents).
 
-[![Build](https://github.com/AgentNoobff/VGUI/actions/workflows/build.yml/badge.svg)](https://github.com/AgentNoobff/VGUI/actions/workflows/build.yml)
-[![Latest release](https://img.shields.io/github/v/release/AgentNoobff/VGUI?display_name=tag&sort=semver)](https://github.com/AgentNoobff/VGUI/releases/latest)
-[![Javadocs](https://img.shields.io/badge/API-Javadocs-2f81f7)](https://agentnoobff.github.io/VGUI/)
+[![Build](https://github.com/AgentNoobff/VGui/actions/workflows/build.yml/badge.svg)](https://github.com/AgentNoobff/VGui/actions/workflows/build.yml)
+[![Latest release](https://img.shields.io/github/v/release/AgentNoobff/VGui?display_name=tag&sort=semver)](https://github.com/AgentNoobff/VGui/releases/latest)
+[![Javadocs](https://img.shields.io/badge/API-Javadocs-2f81f7)](https://agentnoobff.github.io/VGui/)
 [![Java 25](https://img.shields.io/badge/Java-25-e76f00)](https://adoptium.net/temurin/releases/?version=25)
-[![License](https://img.shields.io/github/license/AgentNoobff/VGUI)](LICENSE)
+[![License](https://img.shields.io/github/license/AgentNoobff/VGui)](LICENSE)
 
 VGui lets a Velocity plugin open container menus without installing a matching plugin on every backend server. The proxy owns the window, receives clicks, preserves the player inventory during refreshes, and prevents client-side item transactions by default.
 
@@ -14,12 +14,12 @@ Use it for server selectors, network shops, queues, moderation tools, player set
 
 ## Documentation
 
-- [Complete GitHub Wiki](https://github.com/AgentNoobff/VGUI/wiki)
-- [Getting started](https://github.com/AgentNoobff/VGUI/wiki/Getting-Started)
-- [Installation and dependency setup](https://github.com/AgentNoobff/VGUI/wiki/Installation)
-- [Examples and recipes](https://github.com/AgentNoobff/VGUI/wiki/Examples-and-Recipes)
-- [API Javadocs](https://agentnoobff.github.io/VGUI/)
-- [Troubleshooting](https://github.com/AgentNoobff/VGUI/wiki/Troubleshooting)
+- [Complete GitHub Wiki](https://github.com/AgentNoobff/VGui/wiki)
+- [Getting started](https://github.com/AgentNoobff/VGui/wiki/Getting-Started)
+- [Installation and dependency setup](https://github.com/AgentNoobff/VGui/wiki/Installation)
+- [Examples and recipes](https://github.com/AgentNoobff/VGui/wiki/Examples-and-Recipes)
+- [API Javadocs](https://agentnoobff.github.io/VGui/)
+- [Troubleshooting](https://github.com/AgentNoobff/VGui/wiki/Troubleshooting)
 
 ## Highlights
 
@@ -35,7 +35,7 @@ Use it for server selectors, network shops, queues, moderation tools, player set
 
 ## Install the standalone plugin
 
-1. Download the stable [latest VGui jar](https://github.com/AgentNoobff/VGUI/releases/latest/download/vgui.jar).
+1. Download the stable [latest VGui jar](https://github.com/AgentNoobff/VGui/releases/latest/download/vgui.jar).
 2. Put `vgui.jar` in the Velocity `plugins` directory.
 3. Restart the proxy.
 4. Declare VGui as a dependency of the plugin that uses its API.
@@ -88,9 +88,9 @@ dependencies {
 }
 ```
 
-`main-SNAPSHOT` follows the current `main` branch. Production plugins should replace it with a release tag from the [latest release](https://github.com/AgentNoobff/VGUI/releases/latest), using the `vX.Y.Z` form, for reproducible builds.
+`main-SNAPSHOT` follows the current `main` branch. Production plugins should replace it with a release tag from the [latest release](https://github.com/AgentNoobff/VGui/releases/latest), using the `vX.Y.Z` form, for reproducible builds.
 
-Keep the dependency in `provided` or `compileOnly` scope when the standalone VGui plugin supplies it at runtime. See the [shading guide](https://github.com/AgentNoobff/VGUI/wiki/Shading-VGui) if you need to embed and relocate VGui instead.
+Keep the dependency in `provided` or `compileOnly` scope when the standalone VGui plugin supplies it at runtime. See the [shading guide](https://github.com/AgentNoobff/VGui/wiki/Shading-VGui) if you need to embed and relocate VGui instead.
 
 ## Small example
 
@@ -139,7 +139,7 @@ The build runs focused unit tests and creates the main, source, and Javadoc jars
 
 ## Contributing and security
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). Use [GitHub private vulnerability reporting](https://github.com/AgentNoobff/VGUI/security/advisories/new) for security reports and [SUPPORT.md](SUPPORT.md) for support questions.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). Use [GitHub private vulnerability reporting](https://github.com/AgentNoobff/VGui/security/advisories/new) for security reports and [SUPPORT.md](SUPPORT.md) for support questions.
 
 VGui is licensed under the [MIT License](LICENSE).
 
